@@ -14,6 +14,7 @@ export default function NewUser() {
                     <input type="text" name="first_n" id="first_n" placeholder="First Name"/>
                     <input type="text" name="last_n" id="last_n" placeholder="Last Name" />
                 </div>
+                <input type="text" name="newUsername" id="newUsername" placeholder="Enter username" />
                 <input type="email" name="newEmail" id="newEmail" placeholder="Enter email"/>
                 <input type="password" name="newPassword" id="newPassword" placeholder="Enter password"/>
                 <div>

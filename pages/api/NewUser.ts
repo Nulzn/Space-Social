@@ -3,12 +3,12 @@ import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 import { argon2id } from "hash-wasm"
 
-export default async function userHandler(req: NextApiRequest, res: NextApiResponse) {
+export default async function userHandlerCreate(req: NextApiRequest, res: NextApiResponse) {
     const salt = new Uint8Array(16)
-    window.crypto.getRandomValues(salt)
+    crypto.getRandomValues(salt)
 
     const key: any = await argon2id({
-        password: req.body.newPassword.toString(),
+        password: req.body.newPassword,
         salt,
         parallelism: 1,
         iterations: 256,
@@ -17,27 +17,28 @@ export default async function userHandler(req: NextApiRequest, res: NextApiRespo
         outputType: 'encoded'
     })
 
-    console.log(`Derived key: ${key}`)
+    //console.log(`Derived key: ${key}`)
     
     
     async function StoreUser() {
         const user: any = await prisma.user.create({
             data: {
-                first_name: req.body.first_n.toString(),
-                last_name: req.body.last_n.toString(),
-                email: req.body.newEmail.toString(),
-                password: key
+                first_name: req.body.first_n,
+                last_name: req.body.last_n,
+                email: req.body.newEmail,
+                password: req.body.newPassword
             }
         })
+
+        console.log(user)
     }
 
     StoreUser().then(async() => {
         await prisma.$disconnect()
-        res.status(200).json({HashedKey: key})
+        res.status(200).json({Status: true})
     }).catch(async (e) => {
         console.error(e)
         await prisma.$disconnect()
-        process.exit(1)
-        res.status(404).json({Status: false})
+        res.status(200).json({Status: false})
     })
 }
