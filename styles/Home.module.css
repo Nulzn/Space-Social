@@ -5,12 +5,15 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding-bottom: 0.2em;
-    /* border-bottom: 2px solid rgba(211, 211, 211, 0.493); */
+
+    position: fixed;
+    top: 1em;
+    left: 10em;
 }
 
 .navbar {
+    position: fixed;
     display: flex;
-    justify-content: space-between;
     margin-left: 0.9em;
     margin-right: 0.9em;   
 }
@@ -23,6 +26,10 @@
     border-radius: 1.6em;
     margin-right: 0.5em;
     transition: 0.25s;
+
+    position: fixed;
+    top: 1em;
+    right: 33em;
 }
 
 .signUp:hover {
@@ -40,6 +47,10 @@
     font-weight: bold;
     margin-left: 0.5em;
     transition: 0.25s;
+
+    position: fixed;
+    top: 1em;
+    right: 27em;
 }
 
 .signIn:hover {
@@ -52,6 +63,10 @@
     flex-direction: column;
     max-width: 15%;
     margin-top: 2em;
+    position: fixed;
+
+    top: 5em;
+    left: 20em;
 }
 
 .sidebarLink {
@@ -101,4 +116,154 @@
 
 .rocketSharpIcon {
     margin-left: 0.5em;
+}
+
+.homeButton {
+    padding-right: 6.3em !important;
+}
+
+.settingsButton {
+    padding-right: 5em !important;
+}
+
+.spaceInfoButton {
+    padding-right: 4em !important;
+}
+
+  /*--------------*/
+ /* POST STYLING */
+/*--------------*/
+
+.postFramePositioning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.postFrame {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.5em;
+    width: 38%;
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 2em;
+}
+
+.postInfo {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.postInfo p {
+    margin: 0;
+}
+
+.postInfo h1 {
+    margin: 0;
+}
+
+.postInfo small {
+    color: rgba(118, 118, 118, 0.655);
+}
+
+.postProfile {
+    border-radius: 0.5em;
+    margin-right: 2em;
+}
+
+.upvoteFrame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.upvoteCount {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-left: 2em;
+}
+
+.postUpvote {
+    font-size: xx-large;
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.postUpvote:hover {
+    cursor: pointer;
+}
+
+
+  /*-----------------------*/
+ /* CREATE A POST STYLING */
+/*-----------------------*/
+
+.createPostFrame {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    bottom: 5em;
+    right: 6em;
+}
+
+.createPostTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.createPostTitleIcon {
+    margin-left: 0.5em;
+}
+
+.postFrameTitle {
+    border: none;
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    outline: none;
+    transition: 0.2s;
+}
+
+.postFrameTitle:focus {
+    border-bottom: 2px solid rgb(0, 145, 255);
+}
+
+.postFrameArea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 1em;
+    outline: none;
+    transition: 0.2s;
+}
+
+.postFrameArea:focus {
+    border-bottom: 2px solid rgb(0, 145, 255);
+}
+
+.postFrameSubmit {
+    width: 30%;
+    padding-top: 0.45em;
+    padding-bottom: 0.45em;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.2em;
+    transition: 0.2s;
+}
+
+.postFrameSubmit:hover {
+    cursor: pointer;
+    opacity: 0.65;
 }
