@@ -2,18 +2,17 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 import { argon2Verify, argon2id } from "hash-wasm";
-import { sign } from "jsonwebtoken"
+import jwt from "jsonwebtoken"
+import cookies from "cookie";
 
 export default async function userHandlerLogin(req: NextApiRequest, res: NextApiResponse) {
-    
+
     async function VerifyUser() {
         const info: any = await prisma.user.findUnique({
             where: {
                 email: req.body.loginEmail
             }
         })
-
-        console.log(info)
 
         const salt: any = info?.salt
 
@@ -28,10 +27,19 @@ export default async function userHandlerLogin(req: NextApiRequest, res: NextApi
         })
 
         if (key == info?.password) {
-            const sessionToken = sign({ userId: info?.id }, process.env.JWT_SECRET, {
+
+            const sessionToken = jwt.sign({userId: info.id, username: info.username, email: info.email}, process.env.JWT_SECRET as string, {
                 expiresIn: '1d',
             })
-            res.redirect(302, "/")
+            
+            res.setHeader('Set-Cookie', cookies.serialize('sessionToken', sessionToken, {
+                httpOnly: false,
+                maxAge: 60 * 60 * 24, // 1 day
+                path: '/',
+            }))
+
+            return res.redirect("/")
+            
         }
         else {
             res.status(200).json({successfulLogin: false})

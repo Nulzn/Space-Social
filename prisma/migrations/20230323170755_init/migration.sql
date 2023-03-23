@@ -5,7 +5,7 @@ CREATE TABLE "User" (
     "email" TEXT,
     "first_name" TEXT,
     "last_name" TEXT,
-    "salt" BLOB,
+    "salt" BLOB NOT NULL,
     "password" TEXT
 );
 

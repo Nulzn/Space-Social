@@ -48,3 +48,13 @@
     cursor: pointer;
     opacity: 0.75;
 }
+
+@media screen and (min-width: 1600px) {
+    .name input {
+        margin-right: 1.7em;
+    }
+
+    .form {
+        width: 20.5%;
+    }
+}

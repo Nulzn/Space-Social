@@ -289,3 +289,38 @@
         right: 3em;
     }
 }
+
+.loggedInProfile {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 84.5em;
+}
+
+.loggedInProfile p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 1em;
+    padding-right: 0.6em;
+}
+
+.loggedInProfile button {
+    border: none;
+    border-radius: 0.2em;
+    background-color: white;
+    font-weight: bold;
+    padding-bottom: 0.2em;
+    margin: 0;
+    transition: 0.2s;
+}
+
+.loggedInProfile button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.loggedInProfilePicture {
+    border-radius: 0.3em;
+    margin: 0;
+}

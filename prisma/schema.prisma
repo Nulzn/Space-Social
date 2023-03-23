@@ -16,7 +16,7 @@ model User {
   email      String? @unique
   first_name String?
   last_name  String?
-  salt       Bytes?
+  salt       Bytes
   password   String?
   posts Post[]
 }

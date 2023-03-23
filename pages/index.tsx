@@ -1,28 +1,74 @@
 import styling from "../styles/Home.module.css"
 import Link from "next/link"
 import { IoRocketSharp, IoHomeSharp, IoSettingsSharp, IoNotificationsSharp, IoPlanetSharp, IoAddCircleSharp } from "react-icons/io5"
-import { GetStaticProps } from "next"
 import Image from "next/image"
 import ProfilePic from "../Pictures/profile.jpg"
-import { useEffect, useState } from "react"
-
-
-export const getStaticProps: GetStaticProps = async() => {
-  return {
-    props: {
-      
-    }
-  }
-}
+import { useEffect, useMemo, useState } from "react"
+import jwt from "jsonwebtoken"
+import Cookies from "js-cookie"
+import { useRouter } from "next/router"
 
 export default function Home() {
-  const [newPostState, setNewPostState] = useState(false);
 
+  const router = useRouter()
+
+  const [newPostState, setNewPostState] = useState(false)
+  const [loggedInState, setLoggedInState] = useState(false)
+
+  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
+
+  // Enabled / Disables the Create Post Frame
   useEffect(() => {
     let elem: any = document.getElementById("createPostFrame")
     elem.style.visibility = (newPostState) ? "Visible" : "Hidden"
   }, [newPostState])
 
+  useEffect(() => {
+    console.log("Login Status:", loggedInState)
+    var profileElem: any = document.getElementById("loggedInProfile")
+    var loginOptions: any = document.getElementById("loginOptions")
+    
+    if (loggedInState) {
+      profileElem.style.visibility = "Visible"
+      loginOptions.style.visibility = "Hidden"
+    } else if (!loggedInState) {
+      profileElem.style.visibility = "Hidden"
+      loginOptions.style.visibility = "Visible"
+    }
+  }, [])
+
+  const token = Cookies.get("sessionToken")
+  useEffect(() => {
+
+    if (!token)
+    {
+      return;
+    }
+
+    const mainToken = token.split(".")[1]
+    const payload: any = JSON.parse(Buffer.from(mainToken, "base64").toString("ascii"))
+    
+    setUsername(payload.username)
+    setEmail(payload.email)
+    setLoggedInState(true)
+  }, [token])
+
+  async function handleLogout() {
+    const response = await fetch("/api/Logout", {
+      method: "POST",
+      credentials: "include"
+    })
+
+    if (response.ok) {
+      console.log("Logout successful")
+      setLoggedInState(false)
+
+      router.push("/")
+    } else {
+      console.log("Error, something went wrong while trying to logout")
+    }
+  }
   return (
     <>
       <div>
@@ -36,7 +82,7 @@ export default function Home() {
             <input type="submit" value={"Post"} className={styling.postFrameSubmit} />
           </form>
 
-          <div>
+          <div id="loginOptions">
             <Link href={"/user/new"}>
               <button className={styling.signUp}>Sign Up</button>
             </Link>
@@ -45,6 +91,22 @@ export default function Home() {
                 <button className={styling.signIn}>Sign In</button>
             </Link>
           </div>
+
+
+          <div className={styling.loggedInProfile} id="loggedInProfile">
+              <Image 
+                src={ProfilePic}
+                alt="Monkey Family"
+                width={40}
+                height={40}
+                className={styling.loggedInProfilePicture}
+              />
+              <p>{username}</p>
+              <button onClick={() => handleLogout()}>Logout</button>
+          </div>
+
+
+
         </div>
 
 
