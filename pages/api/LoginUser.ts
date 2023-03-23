@@ -1,45 +1,32 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
-import { argon2id, argon2Verify } from "hash-wasm"
-import { error } from "console";
+import { argon2Verify, argon2id } from "hash-wasm";
 
 export default async function userHandlerLogin(req: NextApiRequest, res: NextApiResponse) {
-    const salt = new Uint8Array(16)
-    crypto.getRandomValues(salt)
-
-    console.log("Default Pass:", req.body.loginPassword)
-
-    const key = await argon2id({
-        password: req.body.loginPassword,
-        salt,
-        parallelism: 1,
-        iterations: 256,
-        memorySize: 512,
-        hashLength: 32,
-        outputType: 'encoded'
-    })
-
+    
     async function VerifyUser() {
-        const info = await prisma.user.findFirst({
+        const info: any = await prisma.user.findFirst({
             where: {
-                password: req.body.loginPassword
+                email: req.body.loginEmail
             }
         })
 
         console.log(info)
 
-        //console.log("Info Pass: ", info?.password)
+        const salt: any = info?.salt
 
-        /*const isValid = await argon2Verify({
-            password: info?.password,
-            hash: key
+        const key = await argon2id({
+            password: req.body.loginPassword,
+            salt,
+            parallelism: 1,
+            iterations: 256,
+            memorySize: 512,
+            hashLength: 32,
+            outputType: 'hex'
         })
 
-        console.log(isValid)
-        return (isValid) ? true : false*/
-
-        if (info?.password) {
+        if (key == info?.password) {
             res.redirect(302, "/")
         }
         else {

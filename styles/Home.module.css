@@ -139,7 +139,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 .postFrame {
@@ -266,4 +266,26 @@
 .postFrameSubmit:hover {
     cursor: pointer;
     opacity: 0.65;
+}
+
+@media screen and (max-width: 1539px) {
+    .sidebar {
+        left: 10em;
+    }
+
+    .signIn {
+        right: 19em;
+    }
+
+    .signUp {
+        right: 25em;
+    }
+
+    .h1 {
+        left: 5em;
+    }
+
+    .createPostFrame {
+        right: 3em;
+    }
 }

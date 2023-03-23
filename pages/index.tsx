@@ -76,8 +76,8 @@ export default function Home() {
                 className={styling.postProfile}
               />
               <div className={styling.postInfo}>
-                <h2>Well.. this planet is crazy</h2>
-                <p>I saw this post on reddit, where they talked about how big this planet is!</p>
+                <h2>Look at this exoplanet!</h2>
+                <p>I saw this post, where they talked about how big this planet is!</p>
                 <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
               </div>
               <div className={styling.upvoteFrame}>
@@ -99,7 +99,7 @@ export default function Home() {
                 className={styling.postProfile}
               />
               <div className={styling.postInfo}>
-                <h2>Well.. this planet is crazy</h2>
+                <h2>Wow!</h2>
                 <p>I saw this post on reddit, where they talked about how big this planet is!</p>
                 <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
               </div>
@@ -118,7 +118,7 @@ export default function Home() {
                 className={styling.postProfile}
               />
               <div className={styling.postInfo}>
-                <h2>Well.. this planet is crazy</h2>
+                <h2>Cool!</h2>
                 <p>I saw this post on reddit, where they talked about how big this planet is!</p>
                 <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
               </div>
@@ -137,7 +137,7 @@ export default function Home() {
                 className={styling.postProfile}
               />
               <div className={styling.postInfo}>
-                <h2>Well.. this planet is crazy</h2>
+                <h2>Testing.. Testing..</h2>
                 <p>I saw this post on reddit, where they talked about how big this planet is!</p>
                 <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
               </div>
@@ -156,7 +156,7 @@ export default function Home() {
                 className={styling.postProfile}
               />
               <div className={styling.postInfo}>
-                <h2>Well.. this planet is crazy</h2>
+                <h2>Working!</h2>
                 <p>I saw this post on reddit, where they talked about how big this planet is!</p>
                 <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
               </div>

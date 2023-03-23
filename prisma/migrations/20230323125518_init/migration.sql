@@ -5,6 +5,7 @@ CREATE TABLE "User" (
     "email" TEXT,
     "first_name" TEXT,
     "last_name" TEXT,
+    "salt" BLOB,
     "password" TEXT
 );
 
