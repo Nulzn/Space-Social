@@ -37,7 +37,7 @@ export default async function userHandlerCreate(req: NextApiRequest, res: NextAp
 
     StoreUser().then(async() => {
         await prisma.$disconnect()
-        res.status(200).json({Status: true})
+        res.redirect(302, "/")
     }).catch(async (e) => {
         console.error(e)
         await prisma.$disconnect()

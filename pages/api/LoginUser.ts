@@ -2,11 +2,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 import { argon2Verify, argon2id } from "hash-wasm";
+import { sign } from "jsonwebtoken"
 
 export default async function userHandlerLogin(req: NextApiRequest, res: NextApiResponse) {
     
     async function VerifyUser() {
-        const info: any = await prisma.user.findFirst({
+        const info: any = await prisma.user.findUnique({
             where: {
                 email: req.body.loginEmail
             }
@@ -27,6 +28,9 @@ export default async function userHandlerLogin(req: NextApiRequest, res: NextApi
         })
 
         if (key == info?.password) {
+            const sessionToken = sign({ userId: info?.id }, process.env.JWT_SECRET, {
+                expiresIn: '1d',
+            })
             res.redirect(302, "/")
         }
         else {
