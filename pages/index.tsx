@@ -36,7 +36,7 @@ export default function Home() {
       profileElem.style.visibility = "Hidden"
       loginOptions.style.visibility = "Visible"
     }
-  }, [])
+  }, [loggedInState])
 
   const token = Cookies.get("sessionToken")
   useEffect(() => {
@@ -52,6 +52,8 @@ export default function Home() {
     setUsername(payload.username)
     setEmail(payload.email)
     setLoggedInState(true)
+
+    router.push("/")
   }, [token])
 
   async function handleLogout() {

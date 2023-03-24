@@ -1,9 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import Cookies from "js-cookie";
 
 export default function logoutHandler(req: NextApiRequest, res: NextApiResponse) {
-    res.setHeader(
-        'Set-Cookie',
-        ['sessionToken=; Max-Age=0']
-    )
+    Cookies.remove("sessionToken")
     res.status(200).end()
 }

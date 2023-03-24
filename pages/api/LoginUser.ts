@@ -34,7 +34,7 @@ export default async function userHandlerLogin(req: NextApiRequest, res: NextApi
             
             res.setHeader('Set-Cookie', cookies.serialize('sessionToken', sessionToken, {
                 httpOnly: false,
-                maxAge: 60 * 60 * 24, // 1 day
+                maxAge: 60 * 60, // 1 Hour
                 path: '/',
             }))
 
@@ -42,7 +42,7 @@ export default async function userHandlerLogin(req: NextApiRequest, res: NextApi
             
         }
         else {
-            res.status(200).json({successfulLogin: false})
+            return res.status(200).json({successfulLogin: false})
         }
     }
 
