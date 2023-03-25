@@ -10,6 +10,7 @@ export default function NewUser() {
     return (
         <div className={styling.mainDiv}>
             <form action="/api/NewUser" method="POST" className={styling.form}>
+                <h1 className={styling.h1}>Space Social<span className={styling.span}>Signup</span></h1>
                 <div className={styling.name}>
                     <input type="text" name="first_n" id="first_n" placeholder="First Name"/>
                     <input type="text" name="last_n" id="last_n" placeholder="Last Name" />

@@ -1,7 +1,14 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import Cookies from "js-cookie";
+import cookies from "cookies"
 
 export default function logoutHandler(req: NextApiRequest, res: NextApiResponse) {
-    Cookies.remove("sessionToken")
-    res.status(200).end()
+    try {
+        const cookieInstance = new cookies(req, res);
+        cookieInstance.set("sessionToken", "", { expires: new Date(0) })
+        res.status(200).end()
+    } catch(err) {
+        console.error("Error with the process of logout! ", err)
+        res.status(500).end()
+    }
+    
 }

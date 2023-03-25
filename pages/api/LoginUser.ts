@@ -8,6 +8,7 @@ import cookies from "cookie";
 export default async function userHandlerLogin(req: NextApiRequest, res: NextApiResponse) {
 
     async function VerifyUser() {
+        console.log(req.body.loginPassword)
         const info: any = await prisma.user.findUnique({
             where: {
                 email: req.body.loginEmail
@@ -38,11 +39,13 @@ export default async function userHandlerLogin(req: NextApiRequest, res: NextApi
                 path: '/',
             }))
 
+            res.status(200)
+
             return res.redirect("/")
             
         }
         else {
-            return res.status(200).json({successfulLogin: false})
+            res.status(401).json({ success: false })
         }
     }
 

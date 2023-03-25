@@ -53,9 +53,27 @@
     font-size: small;
 }
 
+.invalidInfo {
+    color: rgba(255, 0, 0, 0.778);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 .forgotPassword {
-    font-size: smaller;
-    margin-bottom: 1.5em;
+    border: none;
+    border-radius: 0.2em;
+    background-color: white;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    margin: 0;
+    font-weight: bold;
     text-decoration: none;
-    color: rgb(0, 145, 255);
+    color: black;
+    font-size: small;
+    margin-bottom: 1em;
+    transition: 0.2s;
+}
+
+.forgotPassword:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }

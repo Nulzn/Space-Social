@@ -7,6 +7,7 @@ import { useEffect, useMemo, useState } from "react"
 import jwt from "jsonwebtoken"
 import Cookies from "js-cookie"
 import { useRouter } from "next/router"
+import * as CSS from "csstype"
 
 export default function Home() {
 
@@ -14,6 +15,9 @@ export default function Home() {
 
   const [newPostState, setNewPostState] = useState(false)
   const [loggedInState, setLoggedInState] = useState(false)
+
+  const [loggedInVisibility, setLoggedInVisibility] = useState<any>()
+  const [loginOptionsVisibility, setLoginOptionsVisibility] = useState<any>()
 
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
@@ -25,7 +29,7 @@ export default function Home() {
   }, [newPostState])
 
   useEffect(() => {
-    console.log("Login Status:", loggedInState)
+    /*console.log("Login Status:", loggedInState)
     var profileElem: any = document.getElementById("loggedInProfile")
     var loginOptions: any = document.getElementById("loginOptions")
     
@@ -35,7 +39,19 @@ export default function Home() {
     } else if (!loggedInState) {
       profileElem.style.visibility = "Hidden"
       loginOptions.style.visibility = "Visible"
-    }
+    }*/
+
+    const loggedInVisibility: React.CSSProperties = {
+      visibility: loggedInState ? "visible" : "hidden"
+    } as { visibility: CSS.Property.Visibility }
+
+    const loginOptionsVisibility: React.CSSProperties = {
+      visibility: loggedInState ? "hidden" : "visible"
+    } as { visibility: CSS.Property.Visibility }
+
+    setLoggedInVisibility(loggedInVisibility)
+    setLoginOptionsVisibility(loginOptionsVisibility)
+
   }, [loggedInState])
 
   const token = Cookies.get("sessionToken")
@@ -49,9 +65,17 @@ export default function Home() {
     const mainToken = token.split(".")[1]
     const payload: any = JSON.parse(Buffer.from(mainToken, "base64").toString("ascii"))
     
-    setUsername(payload.username)
-    setEmail(payload.email)
-    setLoggedInState(true)
+    const timeNow = Math.floor(Date.now() / 1000)
+    if (payload.exp && payload.exp < timeNow) {
+      if (!loggedInState) { return; }
+      
+      setLoggedInState(false)
+      return;
+    } else {
+      setUsername(payload.username)
+      setEmail(payload.email)
+      setLoggedInState(true)
+    }
 
     router.push("/")
   }, [token])
@@ -84,7 +108,7 @@ export default function Home() {
             <input type="submit" value={"Post"} className={styling.postFrameSubmit} />
           </form>
 
-          <div id="loginOptions">
+          <div id="loginOptions" style={loginOptionsVisibility}>
             <Link href={"/user/new"}>
               <button className={styling.signUp}>Sign Up</button>
             </Link>
@@ -95,7 +119,7 @@ export default function Home() {
           </div>
 
 
-          <div className={styling.loggedInProfile} id="loggedInProfile">
+          <div className={styling.loggedInProfile} id="loggedInProfile" style={loggedInVisibility}>
               <Image 
                 src={ProfilePic}
                 alt="Monkey Family"
