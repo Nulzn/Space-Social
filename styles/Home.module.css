@@ -273,6 +273,7 @@
     align-items: center;
     position: relative;
     left: 84.5em;
+    visibility: hidden;
 }
 
 .loggedInProfile p {

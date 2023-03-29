@@ -1,10 +1,36 @@
+.backgroundDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.h1 {
+    display: flex;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding-bottom: 0.2em;
+
+    position: fixed;
+    top: 1em;
+    left: 10em;
+}
+
 .mainDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 50vh;
-    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
+
+    min-width: 80vh;
+    min-height: 98.2vh;
+
+    position: fixed;
+
+    top: 1em;
+    left: 30em;
 }
 
 .span {
@@ -12,11 +38,18 @@
     font-size: small;
 }
 
+.newUsername, .confirmPassword {
+    color: rgb(157, 157, 157);
+    font-size: smaller;
+    display: flex;
+    flex-direction: column;
+}
+
 .inputField {
     border: none;
     outline: none;
     margin-bottom: 1.5em;
-    padding: 0.4em 0.5em 0.4em 0.5em;
+    padding: 0.4em 0.5em 0.4em 0.2em;
     border-bottom: 2px solid lightgray;
     transition: 0.2s;
 }
@@ -26,9 +59,18 @@
 }
 
 .themeSection {
-    display: flex;
-    align-items: center;
     margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    color: rgb(157, 157, 157);
+    font-size: smaller;
+}
+
+.themeSection select {
+    padding: 0.4em 10.2em 0.4em 0.2em;
+    border: none;
+    background-color: white;
+    border-bottom: 2px solid lightgray;
 }
 
 .themeSection p {
@@ -56,6 +98,7 @@
     font-weight: bold;
     color: white;
     border-radius: 0.2em;
+    margin-right: 0.25em;
     transition: 0.2s;
 }
 
@@ -67,16 +110,92 @@
 .deleteAccountButton {
     padding: 0.5em 0.91em 0.5em 0.91em;
     border: none;
-    background-color: white;
+    background-color: rgb(253, 242, 242);
     font-weight: bold;
     border-radius: 0.2em;
-    margin-top: 0.5em;
+    margin-left: 0.25em;
     position: relative;
     transition: 0.2s;
 }
 
 .deleteAccountButton:hover {
     cursor: pointer;
-    background-color: rgba(255, 0, 0, 0.778);
+    background-color: rgba(255, 0, 0, 0.768);
     color: white;
+}
+
+  /*----------*/
+ /* Siderbar */
+/*----------*/
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    max-width: 15%;
+    margin-top: 2em;
+    position: fixed;
+
+    top: 5em;
+    left: 20em;
+}
+
+.sidebarLink {
+    text-decoration: none;
+}
+
+.sidebar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 2em;
+    padding: 0.75em 3em 0.75em 3em;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 1.6em;
+    color: white;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.sidebar button:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+.HomeIcon {
+    margin-left: 1em;
+    font-size: large;
+    float: right;
+}
+
+.NotificationsIcon {
+    margin-left: 1em;
+    font-size: large;
+}
+
+.SettingsIcon {
+    margin-left: 1em;
+    font-size: large;
+}
+
+.PlanetsIcon {
+    margin-left: 1em;
+    font-size: large;
+}
+
+.rocketSharpIcon {
+    margin-left: 0.5em;
+}
+
+.homeButton {
+    padding-right: 6.3em !important;
+}
+
+.settingsButton {
+    padding-right: 5em !important;
+}
+
+.spaceInfoButton {
+    padding-right: 4em !important;
 }

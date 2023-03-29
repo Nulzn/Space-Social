@@ -57,8 +57,14 @@ export default function LoginUser() {
                 <form onSubmit={handleFormSubmit} className={styling.form}>
                     <h1 className={styling.h1}>Space Social<span className={styling.span}>Login</span></h1>
 
-                    <input type="email" placeholder="Email" className={styling.email} onChange={(event) => setLoginEmail(event.target.value)}/>
-                    <input type="password" placeholder="Password" className={styling.password} onChange={(event) => setLoginPassword(event.target.value)}/>
+                    <div className={styling.emailHolder}>
+                        <label htmlFor="">Email</label>
+                        <input type="email" className={styling.email} onChange={(event) => setLoginEmail(event.target.value)}/>
+                    </div>
+                    <div className={styling.passwordHolder}>
+                        <label htmlFor="">Password</label>
+                        <input type="password" className={styling.password} onChange={(event) => setLoginPassword(event.target.value)}/>
+                    </div>
 
                     <small className={styling.invalidInfo} style={invalidCredentials}>Incorrect password. Try again.</small>
                     <Link href={"/password/reset"} className={styling.forgotPassword}>
