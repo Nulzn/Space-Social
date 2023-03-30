@@ -32,7 +32,6 @@ export default function LoginUser() {
         //const data: LoginResponse = await response.json();
 
         if (response.status === 401) {
-            console.log("Something went wrong")
             setErrorMessage(true);
         } else if (response.status == 200) {
             router.push("/")
@@ -66,7 +65,7 @@ export default function LoginUser() {
                         <input type="password" className={styling.password} onChange={(event) => setLoginPassword(event.target.value)}/>
                     </div>
 
-                    <small className={styling.invalidInfo} style={invalidCredentials}>Incorrect password. Try again.</small>
+                    <small className={styling.invalidInfo} style={invalidCredentials}>Incorrect email or password. Try again.</small>
                     <Link href={"/password/reset"} className={styling.forgotPassword}>
                         Forgot password?
                     </Link>

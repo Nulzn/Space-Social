@@ -7,8 +7,6 @@ import { randomBytes } from "crypto";
 export default async function userHandlerCreate(req: NextApiRequest, res: NextApiResponse) {
     const salt = randomBytes(16)
 
-    console.log("Default Pass: ", req.body.newPassword)
-
     const passwordString = req.body.newPassword.toString()
     
     const key = await argon2id({
@@ -20,8 +18,6 @@ export default async function userHandlerCreate(req: NextApiRequest, res: NextAp
         hashLength: 32,
         outputType: 'hex'
     })
-
-    console.log("Hash Key: ", key)
     
     async function StoreUser() {
         const user: any = await prisma.user.create({

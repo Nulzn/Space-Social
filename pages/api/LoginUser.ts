@@ -8,43 +8,48 @@ import cookies from "cookie";
 export default async function userHandlerLogin(req: NextApiRequest, res: NextApiResponse) {
 
     async function VerifyUser() {
-        console.log(req.body.loginPassword)
-        const info: any = await prisma.user.findUnique({
-            where: {
-                email: req.body.loginEmail
-            }
-        })
-
-        const salt: any = info?.salt
-
-        const key = await argon2id({
-            password: req.body.loginPassword,
-            salt,
-            parallelism: 1,
-            iterations: 256,
-            memorySize: 512,
-            hashLength: 32,
-            outputType: 'hex'
-        })
-
-        if (key == info?.password) {
-
-            const sessionToken = jwt.sign({userId: info.id, username: info.username, email: info.email}, process.env.JWT_SECRET as string, {
-                expiresIn: '1d',
+        try {
+            const info: any = await prisma.user.findUnique({
+                where: {
+                    email: req.body.loginEmail
+                }
             })
-            
-            res.setHeader('Set-Cookie', cookies.serialize('sessionToken', sessionToken, {
-                httpOnly: false,
-                maxAge: 60 * 60, // 1 Hour
-                path: '/',
-            }))
 
-            res.status(200)
+            const salt: any = info?.salt
 
-            return res.redirect("/")
+            const key = await argon2id({
+                password: req.body.loginPassword,
+                salt,
+                parallelism: 1,
+                iterations: 256,
+                memorySize: 512,
+                hashLength: 32,
+                outputType: 'hex'
+            })
+
+            if (key == info?.password) {
+
+                const sessionToken = jwt.sign({userId: info.id, username: info.username, email: info.email}, process.env.JWT_SECRET as string, {
+                    expiresIn: '1d',
+                })
+                
+                res.setHeader('Set-Cookie', cookies.serialize('sessionToken', sessionToken, {
+                    httpOnly: false,
+                    maxAge: 60 * 60, // 1 Hour
+                    path: '/',
+                }))
+
+                res.status(200)
+
+                return res.redirect("/")
             
-        }
-        else {
+            }
+            else {
+                res.status(401).json({ success: false })
+            }
+
+
+        } catch(err) {
             res.status(401).json({ success: false })
         }
     }

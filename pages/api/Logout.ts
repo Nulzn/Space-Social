@@ -7,7 +7,7 @@ export default function logoutHandler(req: NextApiRequest, res: NextApiResponse)
         cookieInstance.set("sessionToken", "", { expires: new Date(0) })
         res.status(200).end()
     } catch(err) {
-        console.error("Error with the process of logout! ", err)
+        console.error("Error while trying to logout! ", err)
         res.status(500).end()
     }
     

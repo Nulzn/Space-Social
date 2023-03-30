@@ -60,6 +60,30 @@
     left: 2em;
 }
 
+.firstName, .lastName, .newUser, .newEmail, .newPassword {
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+    color: rgb(157, 157, 157);
+}
+
+.agreeTermsAndService {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.agreeTermsAndService p {
+    font-size: smaller;
+    margin: 0;
+    margin-bottom: 0.65em;
+    margin-left: 1em;
+}
+
+.linkToTerms {
+    text-decoration: none;
+}
+
 @media screen and (min-width: 1600px) {
     .name input {
         margin-right: 1.7em;
