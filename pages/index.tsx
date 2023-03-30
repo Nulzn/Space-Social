@@ -29,17 +29,6 @@ export default function Home() {
   }, [newPostState])
 
   useEffect(() => {
-    /*console.log("Login Status:", loggedInState)
-    var profileElem: any = document.getElementById("loggedInProfile")
-    var loginOptions: any = document.getElementById("loginOptions")
-    
-    if (loggedInState) {
-      profileElem.style.visibility = "Visible"
-      loginOptions.style.visibility = "Hidden"
-    } else if (!loggedInState) {
-      profileElem.style.visibility = "Hidden"
-      loginOptions.style.visibility = "Visible"
-    }*/
 
     const loggedInVisibility: React.CSSProperties = {
       visibility: loggedInState ? "visible" : "hidden"
