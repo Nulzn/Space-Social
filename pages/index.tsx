@@ -8,6 +8,7 @@ import jwt from "jsonwebtoken"
 import Cookies from "js-cookie"
 import { useRouter } from "next/router"
 import * as CSS from "csstype"
+import axios from "axios"
 
 export default function Home() {
 
@@ -84,18 +85,39 @@ export default function Home() {
       console.log("Error, something went wrong while trying to logout")
     }
   }
+
+  async function createPost(postData: { title: string, content: string}, sessionKey: string) {
+    try {
+      const axiosInstance = axios.create({
+        headers: {
+          Authorization: `Bearer ${sessionKey}`
+        }
+      })
+
+      const response = await axiosInstance.post("/api/create", axiosInstance)
+
+      return response.data
+      
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+
   return (
     <>
       <div>
         <div className={styling.navbar}>
           <h1 className={styling.h1}>Space Social <IoRocketSharp className={styling.rocketSharpIcon}/></h1>
 
-          <form action="/api/NewPost" method="POST" className={styling.createPostFrame} id="createPostFrame">
+
+          <form action="/api/posts/create" method="POST" className={styling.createPostFrame} id="createPostFrame">
             <h3 className={styling.createPostTitle}>Create a new post <IoAddCircleSharp className={styling.createPostTitleIcon}/></h3>
             <input type="text" placeholder="Title" className={styling.postFrameTitle}/>
             <textarea name="" id="" cols={50} rows={5} placeholder="Text" className={styling.postFrameArea}></textarea>
             <input type="submit" value={"Post"} className={styling.postFrameSubmit} />
           </form>
+
 
           <div id="loginOptions" style={loginOptionsVisibility}>
             <Link href={"/user/new"}>
@@ -143,6 +165,7 @@ export default function Home() {
           </Link>
         </div>
 
+
         <div className={styling.postFramePositioning}>
           <div className={styling.postFrame}>
               <Image 
@@ -154,7 +177,7 @@ export default function Home() {
               />
               <div className={styling.postInfo}>
                 <h2>Look at this exoplanet!</h2>
-                <p>I saw this post, where they talked about how big this planet is!</p>
+                <p>I saw this post, where they talked about how big this planet is! Amazing!</p>
                 <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
               </div>
               <div className={styling.upvoteFrame}>
