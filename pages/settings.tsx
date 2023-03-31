@@ -2,9 +2,29 @@ import React, { useEffect, useState } from "react"
 import styling from "../styles/Settings.module.css"
 import { IoRocketSharp, IoHomeSharp, IoSettingsSharp, IoNotificationsSharp, IoPlanetSharp, IoAddCircleSharp } from "react-icons/io5"
 import Link from "next/link"
+import Cookies from "js-cookie"
 
 export default function Settings() {
+    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
 
+    const token = Cookies.get("sessionToken")
+    useEffect(() => {
+
+        if (!token) { return; }
+
+        const mainToken = token.split(".")[1]
+        const payload: any = JSON.parse(Buffer.from(mainToken, "base64").toString("ascii"))
+        
+        const timeNow = Math.floor(Date.now() / 1000)
+        if (payload.exp && payload.exp < timeNow) {
+
+            return;
+        } else {
+            setUsername(payload.username)
+            setEmail(payload.email)
+        }
+    }, [token])
 
     useEffect(() => {
         fetch("/api/settings")
@@ -44,7 +64,12 @@ export default function Settings() {
 
                     <div className={styling.newUsername}>
                         <label htmlFor="">Username</label>
-                        <input type="text" placeholder="" className={styling.inputField} />
+                        <input type="text" placeholder="" className={styling.inputField} value={username} />
+                    </div>
+
+                    <div className={styling.newEmail}>
+                        <label htmlFor="">Email</label>
+                        <input type="text" placeholder="" className={styling.inputField} value={email} readOnly/>
                     </div>
 
                     <div className={styling.themeSection}>

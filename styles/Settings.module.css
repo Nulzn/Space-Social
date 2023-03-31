@@ -14,7 +14,7 @@
 
     position: fixed;
     top: 1em;
-    left: 10em;
+    left: 5em;
 }
 
 .mainDiv {
@@ -30,7 +30,7 @@
     position: fixed;
 
     top: 1em;
-    left: 30em;
+    left: 25em;
 }
 
 .span {
@@ -38,7 +38,7 @@
     font-size: small;
 }
 
-.newUsername, .confirmPassword {
+.newUsername, .confirmPassword, .newEmail {
     color: rgb(157, 157, 157);
     font-size: smaller;
     display: flex;
@@ -136,7 +136,7 @@
     position: fixed;
 
     top: 5em;
-    left: 20em;
+    left: 10em;
 }
 
 .sidebarLink {
