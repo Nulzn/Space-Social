@@ -4,7 +4,6 @@ import { IoRocketSharp, IoHomeSharp, IoSettingsSharp, IoNotificationsSharp, IoPl
 import Image from "next/image"
 import ProfilePic from "../Pictures/profile.jpg"
 import { useEffect, useMemo, useState } from "react"
-import jwt from "jsonwebtoken"
 import Cookies from "js-cookie"
 import { useRouter } from "next/router"
 import * as CSS from "csstype"
@@ -119,7 +118,7 @@ export default function Home() {
           </form>
 
 
-          <div id="loginOptions" style={loginOptionsVisibility}>
+          <div id="loginOptions" style={loginOptionsVisibility} className={styling.loginOptions}>
             <Link href={"/user/new"}>
               <button className={styling.signUp}>Sign Up</button>
             </Link>
