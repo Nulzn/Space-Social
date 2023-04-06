@@ -1,0 +1,42 @@
+.mainDiv {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.secondDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form label {
+    margin-bottom: 0.5em;
+    font-size: smaller;
+    color: rgb(157, 157, 157);
+}
+
+.titleInput {
+    height: 2em;
+    margin-bottom: 1.5em;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 0.2em;
+}
+
+.textArea {
+    outline: none;
+    margin-bottom: 1.5em;
+    border: 1px solid lightgrey;
+    border-radius: 0.2em;
+}
+
+.fileInput {
+
+}

@@ -23,10 +23,10 @@ export default function Home() {
   const [email, setEmail] = useState("")
 
   // Enabled / Disables the Create Post Frame
-  useEffect(() => {
-    let elem: any = document.getElementById("createPostFrame")
-    elem.style.visibility = (newPostState) ? "Visible" : "Hidden"
-  }, [newPostState])
+  
+  function redirectNewPost() {
+    router.push("/createpost")
+  }
 
   useEffect(() => {
 
@@ -110,12 +110,7 @@ export default function Home() {
           <h1 className={styling.h1}>Space Social <IoRocketSharp className={styling.rocketSharpIcon}/></h1>
 
 
-          <form action="/api/posts/create" method="POST" className={styling.createPostFrame} id="createPostFrame">
-            <h3 className={styling.createPostTitle}>Create a new post <IoAddCircleSharp className={styling.createPostTitleIcon}/></h3>
-            <input type="text" placeholder="Title" className={styling.postFrameTitle}/>
-            <textarea name="" id="" cols={50} rows={5} placeholder="Text" className={styling.postFrameArea}></textarea>
-            <input type="submit" value={"Post"} className={styling.postFrameSubmit} />
-          </form>
+          
 
 
           <div id="loginOptions" style={loginOptionsVisibility} className={styling.loginOptions}>
@@ -160,7 +155,7 @@ export default function Home() {
             <button className={styling.spaceInfoButton}>Space Info <IoPlanetSharp className={styling.PlanetsIcon}/></button>
           </Link>
           <Link href={"/"} className={styling.sidebarLink}>
-            <button onClick={() => setNewPostState(!newPostState)} className={styling.spaceInfoButton}>New Post<IoAddCircleSharp className={styling.PlanetsIcon}/></button>
+            <button onClick={redirectNewPost} className={styling.spaceInfoButton}>New Post<IoAddCircleSharp className={styling.PlanetsIcon}/></button>
           </Link>
         </div>
 

@@ -238,4 +238,8 @@
     .h1 {
         left: 5em;
     }
+
+    .confirmDeletion {
+        left: 60em;
+    }
 }

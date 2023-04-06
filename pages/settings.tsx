@@ -14,6 +14,9 @@ export default function Settings() {
 
     const [formPassword, setFormPassword] = useState("")
     const [formUsername, setFormUsername] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+    const [confirmUsername, setConfirmUsername] = useState("")
+
     const [errorMessage, setErrorMessage] = useState(false)
     const [invalidCredentials, setInvalidCredentials] = useState<any>()
 
@@ -55,6 +58,26 @@ export default function Settings() {
         }
     };
 
+    const handleDeleteForm = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const response = await fetch('/api/Delete', {
+            method: 'POST',
+            body: JSON.stringify({ confirmUsername, confirmPassword }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        //const data: LoginResponse = await response.json();
+
+        if (response.status === 401) {
+            setErrorMessage(true);
+        } else if (response.status == 200) {
+            handleLogout()
+        }
+    };
+
     useEffect(() => {
         const invalidCredentials: React.CSSProperties = {
             visibility: errorMessage ? "visible" : "hidden"
@@ -62,6 +85,21 @@ export default function Settings() {
 
         setInvalidCredentials(invalidCredentials)
     }, [errorMessage])
+
+    async function handleLogout() {
+        const response = await fetch("/api/Logout", {
+        method: "POST",
+        credentials: "include"
+        })
+
+        if (response.ok) {
+            console.log("Logout successful")
+
+            router.push("/")
+        } else {
+            console.log("Error, something went wrong while trying to logout")
+        }
+    }
 
 
     return (
@@ -80,19 +118,6 @@ export default function Settings() {
                 <Link href={"/spaceinfo"} className={styling.sidebarLink}>
                     <button className={styling.spaceInfoButton}>Space Info <IoPlanetSharp className={styling.PlanetsIcon}/></button>
                 </Link>
-            </div>
-
-            <div className={styling.confirmDeletion}>
-                <form className={styling.confirmDeletionForm}>
-                    <h1>Delete Account</h1>
-                    <p>Enter <b>{username}</b> to confirm</p>
-                    <input type="text" className={styling.inputField} />
-
-                    <label htmlFor="" className={styling.newUsername}>Confirm with your password</label>
-                    <input type="password" className={styling.inputField} />
-
-                    <button type="submit" className={styling.deleteAccountButton}>Confirm Delete</button>
-                </form>
             </div>
 
 
@@ -131,6 +156,20 @@ export default function Settings() {
                     </div>
                 </form>
             </div>
+
+            <div className={styling.confirmDeletion}>
+                <form className={styling.confirmDeletionForm} onSubmit={handleDeleteForm}>
+                    <h1>Delete Account</h1>
+                    <p>Enter <b>{username}</b> to confirm</p>
+                    <input type="text" className={styling.inputField} id="confirmUsername" name="confirmUsername" onChange={(event) => setConfirmUsername(event.target.value)} />
+
+                    <label htmlFor="" className={styling.newUsername}>Confirm with your password</label>
+                    <input type="password" className={styling.inputField} id="confirmPassword" name="confirmPassword" onChange={(event) => setConfirmPassword(event.target.value)}/>
+
+                    <button type="submit" className={styling.deleteAccountButton}>Confirm Delete</button>
+                </form>
+            </div>
+
         </div>
     )
 }
