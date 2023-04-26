@@ -25,7 +25,7 @@ export default async function userHandlerCreate(req: NextApiRequest, res: NextAp
                 first_name: req.body.first_n,
                 last_name: req.body.last_n,
                 username: req.body.newUsername,
-                email: req.body.newEmail,
+                email: req.body.newEmail.toLowerCase(),
                 salt: Buffer.from(salt),
                 password: key
             }

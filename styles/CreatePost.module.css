@@ -25,9 +25,11 @@
 .titleInput {
     height: 2em;
     margin-bottom: 1.5em;
+    margin-left: 4.5em;
     outline: none;
     border: 1px solid lightgray;
     border-radius: 0.2em;
+    width: 70%;
 }
 
 .textArea {
@@ -35,8 +37,36 @@
     margin-bottom: 1.5em;
     border: 1px solid lightgrey;
     border-radius: 0.2em;
+    margin: 1em;
 }
 
 .fileInput {
 
+}
+
+.stylingText {
+    display: flex;
+    flex-direction: column;
+    width: 5%;
+    margin-right: 1em;
+}
+.stylingText button {
+    background-color: white;
+    border: none;
+    padding: 0.25em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    transition: 0.2s;
+}
+
+.stylingText button:hover {
+    border-radius: 0.2em;
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.textAreaStyling {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

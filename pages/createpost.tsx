@@ -9,9 +9,11 @@ export default function createPost() {
                     <label htmlFor="">Title</label>
                     <input type="text" className={styling.titleInput}/>
 
-                    <div>
-                        <div>
-
+                    <div className={styling.textAreaStyling}>
+                        <div className={styling.stylingText}>
+                            <button><b>B</b></button>
+                            <button><em>I</em></button>
+                            <button><s>S</s></button>
                         </div>
                         <div>
                             <label htmlFor="">Description</label>
