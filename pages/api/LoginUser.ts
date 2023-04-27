@@ -11,7 +11,7 @@ export default async function userHandlerLogin(req: NextApiRequest, res: NextApi
         try {
             const info: any = await prisma.user.findUnique({
                 where: {
-                    email: req.body.loginEmail
+                    email: req.body.loginEmail.toLowerCase()
                 }
             })
 

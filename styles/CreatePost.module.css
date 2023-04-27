@@ -25,9 +25,11 @@
 .titleInput {
     height: 2em;
     margin-bottom: 1.5em;
+    margin-left: 4.5em;
     outline: none;
     border: 1px solid lightgray;
     border-radius: 0.2em;
+    width: 70%;
 }
 
 .textArea {
@@ -35,26 +37,9 @@
     margin-bottom: 1.5em;
     border: 1px solid lightgrey;
     border-radius: 0.2em;
+    margin: 1em;
 }
 
 .fileInput {
 
-}
-
-.createPostButton {
-    width: 50%;
-    height: 2.5em;
-    border: none;
-    background-color: black;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    border-radius: 0.2em;
-    transform: translateX(50%);
-    transition: 0.2s;
-}
-
-.createPostButton:hover {
-    cursor: pointer;
-    opacity: 0.75;
 }

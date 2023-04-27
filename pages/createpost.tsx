@@ -11,7 +11,7 @@ export default function createPost() {
 
                     <div>
                         <div>
-                            
+
                         </div>
                         <div>
                             <label htmlFor="">Content</label>

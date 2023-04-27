@@ -274,6 +274,7 @@
 
 .loggedInProfile {
     display: flex;
+    flex-direction: row;
     align-items: center;
     position: relative;
     left: 84.5em;
@@ -289,17 +290,22 @@
 }
 
 .loggedInProfile button {
-    border: none;
-    border-radius: 0.2em;
-    background-color: white;
+    border: 1px solid black;
     font-weight: bold;
-    padding-bottom: 0.2em;
-    margin: 0;
-    transition: 0.2s;
+    padding: 0.25em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border-radius: 8px;
+    background-color: white;
 }
 
 .loggedInProfile button:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background: linear-gradient(
+        to right,
+        #151515,
+        #1f1e1e
+    );
+    color: white;
     cursor: pointer;
 }
 
