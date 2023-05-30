@@ -44,30 +44,3 @@
 .fileInput {
 
 }
-
-.stylingText {
-    display: flex;
-    flex-direction: column;
-    width: 5%;
-    margin-right: 1em;
-}
-.stylingText button {
-    background-color: white;
-    border: none;
-    padding: 0.25em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    transition: 0.2s;
-}
-
-.stylingText button:hover {
-    border-radius: 0.2em;
-    background-color: lightgrey;
-    cursor: pointer;
-}
-
-.textAreaStyling {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
