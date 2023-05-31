@@ -15,7 +15,17 @@
     font-size: small;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (min-width: 1530px) {
+    .responsiveSidebar {
+        visibility: hidden;
+    }
+
+    .sidebar button {
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 612px) {
     .PlanetsIcon, .HomeIcon, .SettingsIcon, .NotificationsIcon {
         font-size: 25px;
     }
