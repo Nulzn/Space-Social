@@ -84,7 +84,7 @@
     color: rgb(157, 157, 157);
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 412px) {
     .PlanetsIcon, .HomeIcon, .SettingsIcon, .NotificationsIcon {
         font-size: 25px;
     }
