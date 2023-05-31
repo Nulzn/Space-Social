@@ -104,7 +104,7 @@ export default function Settings() {
 
     return (
         <div className={styling.backgroundDiv}>
-            <h1 className={styling.h1}>Space Social <IoRocketSharp className={styling.rocketSharpIcon}/></h1>
+            <h1 className={styling.h1}>Settings <IoRocketSharp className={styling.rocketSharpIcon}/></h1>
             <div className={styling.sidebar}>
                 <Link href={"/"} className={styling.sidebarLink}>
                     <button className={styling.homeButton}>Home <IoHomeSharp className={styling.HomeIcon}/></button>
@@ -119,6 +119,24 @@ export default function Settings() {
                     <button className={styling.spaceInfoButton}>Space Info <IoPlanetSharp className={styling.PlanetsIcon}/></button>
                 </Link>
             </div>
+
+            <ul className={styling.responsiveSidebar}>
+                <Link href={"/"}>
+                    <li><IoHomeSharp className={styling.HomeIcon}/></li>
+                </Link>
+                <Link href={"/notifications"}>
+                    <li><IoNotificationsSharp className={styling.NotificationsIcon}/></li>
+                </Link>
+                <Link href={"/createpost"}>
+                    <li><IoAddCircleSharp className={styling.createPostTitleIcon}/></li>
+                </Link>
+                <Link href={"/spaceinfo"}>
+                    <li><IoPlanetSharp className={styling.PlanetsIcon}/></li>
+                </Link>
+                <Link href={"/settings"}>
+                    <li><IoSettingsSharp className={styling.SettingsIcon}/></li>
+                </Link>
+            </ul>
 
 
             <div className={styling.mainDiv}>

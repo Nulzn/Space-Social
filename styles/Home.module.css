@@ -314,6 +314,16 @@
     margin: 0;
 }
 
+@media screen and (min-width: 1530px) {
+    .responsiveSidebar {
+        visibility: hidden;
+    }
+
+    .sidebar button {
+        height: 40px;
+    }
+}
+
 @media screen and (max-width: 1539px) {
     .sidebar {
         left: 10em;
@@ -340,13 +350,53 @@
     }
 }
 
-@media screen and (max-width: 376px) {
-    .sidebar {
-        flex-direction: row;
+@media screen and (max-width: 390px) {
+
+    .PlanetsIcon, .HomeIcon, .SettingsIcon, .NotificationsIcon {
+        font-size: 25px;
     }
 
-    .sidebar button {
-        padding: 0.4em 0.2em 0.4em 0.2em;
+    .createPostTitleIcon {
+        margin-left: 1em;
+        font-size: 35px;
+    }
+
+    .sidebar {
+        visibility: hidden;
+    }
+
+
+
+    .responsiveSidebar {
+        text-decoration: none;
+        list-style-type: none;
+        background-color: white;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        margin-bottom: 0;
+        padding-bottom: 1px;
+        padding-top: 1px;
+
+        height: 4em;
+    }
+
+    .responsiveSidebar li {
+        color: black;
+        transform: translate(-50%);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+
+
+    .sidebarText {
+        visibility: hidden;
     }
 
     .postFrame {
@@ -354,13 +404,25 @@
     }
 
     .h1 {
+        position: fixed;
         left: 0;
         right: 0;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        top: 0;
-        bottom: 35em;
+        top: 0em;
+        bottom: 30em;
+        padding-bottom: 1em;
+        padding-top: 1em;
         background-color: white;
+        text-indent: -100px;
+    }
+
+    .signUpLink {
+        visibility: hidden;
+    }
+
+    .signIn {
+        right: 1em;
     }
 }

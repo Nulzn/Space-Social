@@ -22,6 +22,8 @@ export default function Home() {
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
 
+  const [responsiveMode, setResponsiveMode] = useState(false);
+
   // Enabled / Disables the Create Post Frame
   
   function redirectNewPost() {
@@ -114,11 +116,11 @@ export default function Home() {
 
 
           <div id="loginOptions" style={loginOptionsVisibility} className={styling.loginOptions}>
-            <Link href={"/user/new"}>
+            <Link href={"/user/new"} className={styling.signUpLink}>
               <button className={styling.signUp}>Sign Up</button>
             </Link>
             
-            <Link href={"/user/login"}>
+            <Link href={"/user/login"} className={styling.signInLink}>
                 <button className={styling.signIn}>Sign In</button>
             </Link>
           </div>
@@ -143,21 +145,39 @@ export default function Home() {
 
         <div className={styling.sidebar}>
           <Link href={"/"} className={styling.sidebarLink}>
-            <button className={styling.homeButton}>Home <IoHomeSharp className={styling.HomeIcon}/></button>
+            <button className={styling.homeButton}><p className={styling.sidebarText}>Home</p> <IoHomeSharp className={styling.HomeIcon}/></button>
           </Link>
           <Link href={"/notifications"} className={styling.sidebarLink}>
-            <button>Notifications <IoNotificationsSharp className={styling.NotificationsIcon}/></button>
+            <button><p className={styling.sidebarText}>Notifications</p> <IoNotificationsSharp className={styling.NotificationsIcon}/></button>
           </Link>
           <Link href={"/settings"} className={styling.sidebarLink}>
-            <button className={styling.settingsButton}>Settings <IoSettingsSharp className={styling.SettingsIcon}/></button>
+            <button className={styling.settingsButton}><p className={styling.sidebarText}>Settings</p> <IoSettingsSharp className={styling.SettingsIcon}/></button>
           </Link>
           <Link href={"/spaceinfo"} className={styling.sidebarLink}>
-            <button className={styling.spaceInfoButton}>Space Info <IoPlanetSharp className={styling.PlanetsIcon}/></button>
+            <button className={styling.spaceInfoButton}><p className={styling.sidebarText}>Space Info</p> <IoPlanetSharp className={styling.PlanetsIcon}/></button>
           </Link>
           <Link href={"/"} className={styling.sidebarLink}>
-            <button onClick={redirectNewPost} className={styling.spaceInfoButton}>New Post<IoAddCircleSharp className={styling.PlanetsIcon}/></button>
+            <button onClick={redirectNewPost} className={styling.spaceInfoButton}><p className={styling.sidebarText}>New Post</p><IoAddCircleSharp className={styling.PlanetsIcon}/></button>
           </Link>
         </div>
+
+        <ul className={styling.responsiveSidebar}>
+          <Link href={"/"}>
+            <li><IoHomeSharp className={styling.HomeIcon}/></li>
+          </Link>
+          <Link href={"/notifications"}>
+            <li><IoNotificationsSharp className={styling.NotificationsIcon}/></li>
+          </Link>
+          <Link href={"/createpost"}>
+            <li><IoAddCircleSharp className={styling.createPostTitleIcon}/></li>
+          </Link>
+          <Link href={"/spaceinfo"}>
+            <li><IoPlanetSharp className={styling.PlanetsIcon}/></li>
+          </Link>
+          <Link href={"/settings"}>
+            <li><IoSettingsSharp className={styling.SettingsIcon}/></li>
+          </Link>
+        </ul>
 
 
         <div className={styling.postFramePositioning}>

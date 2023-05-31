@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import * as CSS from "csstype"
+import { IoRocketSharp, IoHomeSharp, IoSettingsSharp, IoNotificationsSharp, IoPlanetSharp, IoAddCircleSharp } from "react-icons/io5"
 
 interface LoginResponse {
     success: boolean;
@@ -71,6 +72,24 @@ export default function LoginUser() {
                     </Link>
                     <input type="submit" value={"Login"} className={styling.submit}/>
                 </form>
+
+                <ul className={styling.responsiveSidebar}>
+                    <Link href={"/"}>
+                        <li><IoHomeSharp className={styling.HomeIcon}/></li>
+                    </Link>
+                    <Link href={"/notifications"}>
+                        <li><IoNotificationsSharp className={styling.NotificationsIcon}/></li>
+                    </Link>
+                    <Link href={"/createpost"}>
+                        <li><IoAddCircleSharp className={styling.createPostTitleIcon}/></li>
+                    </Link>
+                    <Link href={"/spaceinfo"}>
+                        <li><IoPlanetSharp className={styling.PlanetsIcon}/></li>
+                    </Link>
+                    <Link href={"/settings"}>
+                        <li><IoSettingsSharp className={styling.SettingsIcon}/></li>
+                    </Link>
+                </ul>
             </div>
         </div>
     )
