@@ -84,6 +84,10 @@
     color: rgb(157, 157, 157);
 }
 
+.registerBtn {
+    visibility: hidden;
+}
+
 @media screen and (max-width: 612px) {
     .PlanetsIcon, .HomeIcon, .SettingsIcon, .NotificationsIcon {
         font-size: 25px;
@@ -149,6 +153,36 @@
         padding-bottom: 1em;
         padding-top: 1em;
         background-color: white;
+    }
+
+    .emailHolder, .passwordHolder {
+        font-size: large;
+    }
+
+    .forgotPassword {
+        font-size: medium;
+    }
+
+    .submit {
+        padding: 0.8em 5.6em 0.8em 5.6em;
+        font-size: large;
+    }
+
+    .registerBtn {
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-decoration: none;
+        transform: translateY(-325%);
+    }
+
+    .registerBtn button {
+        border: none;
+        font-size: large;
+        font-weight: bold;
+        border-radius: 0.2em;
+        padding: 0.8em 4.9em 0.8em 4.9em;
     }
 }
 

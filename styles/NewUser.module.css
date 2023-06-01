@@ -93,3 +93,44 @@
         width: 20.5%;
     }
 }
+
+@media screen and (max-width: 612px){
+    .name {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .form label {
+        font-size: large;
+    }
+
+    .optionsBtns {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+    }
+
+    .optionsBtns button, .optionsBtns input {
+        font-size: large;
+        padding: 1.2em 4.9em 1.2em 4.9em;
+    }
+
+    .optionsBtns button:nth-child(1) {
+        background-color: #EFEFEF;
+        color: black;
+        width: 17.5em;
+    }
+
+    .agreeTermsAndService {
+        font-size: 1.5em;
+    }
+
+    .name, .newUser, .newEmail, .newPassword, .agreeTermsAndService {
+        margin-left: 4em;
+    }
+
+}

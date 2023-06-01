@@ -325,7 +325,22 @@
         transform: translate(-80%);
     }
 
+    .mainDiv label, .mainDiv select {
+        font-size: large;
+    }
+
     .mainDiv h1 {
         visibility: hidden;
+    }
+
+    .optionBtns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .optionBtns button {
+        margin-bottom: 1em;
+        font-size: large;
+        padding: 0.8em 4.9em 0.8em 4.9em;
     }
 }

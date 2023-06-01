@@ -73,6 +73,8 @@ export default function LoginUser() {
                     <input type="submit" value={"Login"} className={styling.submit}/>
                 </form>
 
+                <a href="/user/new" className={styling.registerBtn}><button>Register</button></a>
+
                 <ul className={styling.responsiveSidebar}>
                     <Link href={"/"}>
                         <li><IoHomeSharp className={styling.HomeIcon}/></li>

@@ -168,7 +168,7 @@ export default function Settings() {
 
                     <small className={styling.invalidCred} style={invalidCredentials}>Incorrect password!</small>
 
-                    <div>
+                    <div className={styling.optionBtns}>
                         <button className={styling.applyChangesButton} type="submit">Apply Changes</button>
                         <button className={styling.deleteAccountButton}>Delete Account</button>
                     </div>

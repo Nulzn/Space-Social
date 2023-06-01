@@ -182,104 +182,240 @@ export default function Home() {
 
         <div className={styling.postFramePositioning}>
           <div className={styling.postFrame}>
-              <Image 
-                src={ProfilePic}
-                alt="Monkey Family"
-                width={60}
-                height={60}
-                className={styling.postProfile}
-              />
-              <div className={styling.postInfo}>
-                <h2>Look at this exoplanet!</h2>
-                <p>I saw this post, where they talked about how big this planet is! Amazing!</p>
-                <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
-              </div>
-              <div className={styling.upvoteFrame}>
-                <IoRocketSharp className={styling.postUpvote}/>
-                <small className={styling.upvoteCount}>25</small>
-              </div>
-          </div>
-
-
-
-
-
-          <div className={styling.postFrame}>
-              <Image 
-                src={ProfilePic}
-                alt="Monkey Family"
-                width={60}
-                height={60}
-                className={styling.postProfile}
-              />
-              <div className={styling.postInfo}>
-                <h2>Wow!</h2>
-                <p>I saw this post on reddit, where they talked about how big this planet is!</p>
-                <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
-              </div>
-              <div className={styling.upvoteFrame}>
-                <IoRocketSharp className={styling.postUpvote}/>
-                <small className={styling.upvoteCount}>25</small>
-              </div>
-          </div>
-
-          <div className={styling.postFrame}>
-              <Image 
-                src={ProfilePic}
-                alt="Monkey Family"
-                width={60}
-                height={60}
-                className={styling.postProfile}
-              />
-              <div className={styling.postInfo}>
-                <h2>Cool!</h2>
-                <p>I saw this post on reddit, where they talked about how big this planet is!</p>
-                <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
-              </div>
-              <div className={styling.upvoteFrame}>
-                <IoRocketSharp className={styling.postUpvote}/>
-                <small className={styling.upvoteCount}>25</small>
-              </div>
-          </div>
-
-          <div className={styling.postFrame}>
-              <Image 
-                src={ProfilePic}
-                alt="Monkey Family"
-                width={60}
-                height={60}
-                className={styling.postProfile}
-              />
-              <div className={styling.postInfo}>
-                <h2>Testing.. Testing..</h2>
-                <p>I saw this post on reddit, where they talked about how big this planet is!</p>
-                <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
-              </div>
-              <div className={styling.upvoteFrame}>
-                <IoRocketSharp className={styling.postUpvote}/>
-                <small className={styling.upvoteCount}>25</small>
-              </div>
-          </div>
-
-          <div className={styling.postFrame}>
-              <Image 
-                src={ProfilePic}
-                alt="Monkey Family"
-                width={60}
-                height={60}
-                className={styling.postProfile}
-              />
-              <div className={styling.postInfo}>
-                <h2>Working!</h2>
-                <p>I saw this post on reddit, where they talked about how big this planet is!</p>
-                <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
-              </div>
-              <div className={styling.upvoteFrame}>
-                <IoRocketSharp className={styling.postUpvote}/>
-                <small className={styling.upvoteCount}>25</small>
-              </div>
-          </div>
-
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            <div className={styling.postFrame}>
+                <Image 
+                  src={ProfilePic}
+                  alt="Monkey Family"
+                  width={60}
+                  height={60}
+                  className={styling.postProfile}
+                />
+                <div className={styling.postInfo}>
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                  <small>Posted 2023-03-17 | 23:25 by Nulzn</small>
+                </div>
+                <div className={styling.upvoteFrame}>
+                  <IoRocketSharp className={styling.postUpvote}/>
+                  <small className={styling.upvoteCount}>25</small>
+                </div>
+            </div>
+            
 
 
         </div>

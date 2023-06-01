@@ -39,7 +39,7 @@ export default function NewUser() {
                     <p>Agree to the <Link className={styling.linkToTerms} href={"/policy/termsandservice"}>Terms & Service</Link></p>
                 </div>
 
-                <div>
+                <div className={styling.optionsBtns}>
                     <input type="submit" value={"Sign Up"} className={styling.submit}/>
                     <Link href={"/"}>
                         <button value={"Sign Up"} className={styling.submit}>Go Back</button>
