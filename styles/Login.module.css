@@ -186,11 +186,21 @@
     }
 }
 
-@media screen and (min-width: 1530px) {
+@media screen and (max-width: 1539px) {
     .responsiveSidebar {
         visibility: hidden;
     }
 
+    .sidebar button {
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 1539px) {
+    .responsiveSidebar {
+            visibility: hidden;
+        }
+    
     .sidebar button {
         height: 40px;
     }

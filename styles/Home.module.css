@@ -348,6 +348,14 @@
     .loggedInProfile {
         left: 67em;
     }
+
+    .responsiveSidebar {
+        visibility: hidden;
+    }
+
+    .sidebar button {
+        height: 40px;
+    }
 }
 
 @media screen and (max-width: 612px) {
