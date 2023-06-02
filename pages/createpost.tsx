@@ -1,4 +1,6 @@
 import styling from "../styles/CreatePost.module.css"
+import Link from "next/link"
+import { IoRocketSharp, IoHomeSharp, IoSettingsSharp, IoNotificationsSharp, IoPlanetSharp, IoAddCircleSharp } from "react-icons/io5"
 
 export default function createPost() {
     return (
@@ -24,6 +26,24 @@ export default function createPost() {
 
                     <button className={styling.createPostButton}>Create</button>
                 </form>
+
+                <ul className={styling.responsiveSidebar}>
+                    <Link href={"/"}>
+                    <li><IoHomeSharp className={styling.HomeIcon}/></li>
+                    </Link>
+                    <Link href={"/notifications"}>
+                    <li><IoNotificationsSharp className={styling.NotificationsIcon}/></li>
+                    </Link>
+                    <Link href={"/createpost"}>
+                    <li><IoAddCircleSharp className={styling.createPostTitleIcon}/></li>
+                    </Link>
+                    <Link href={"/spaceinfo"}>
+                    <li><IoPlanetSharp className={styling.PlanetsIcon}/></li>
+                    </Link>
+                    <Link href={"/settings"}>
+                    <li><IoSettingsSharp className={styling.SettingsIcon}/></li>
+                </Link>
+        </ul>
             </div>
         </div>
     )

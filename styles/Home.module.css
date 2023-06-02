@@ -314,7 +314,7 @@
     margin: 0;
 }
 
-@media screen and (min-width: 1530px) {
+@media screen and (min-width: 1300px) {
     .responsiveSidebar {
         visibility: hidden;
     }
@@ -347,14 +347,6 @@
 
     .loggedInProfile {
         left: 67em;
-    }
-
-    .responsiveSidebar {
-        visibility: hidden;
-    }
-
-    .sidebar button {
-        height: 40px;
     }
 }
 
